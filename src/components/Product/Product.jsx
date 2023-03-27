@@ -1,7 +1,7 @@
 import React from "react";
 
 const Product = (props) => {
-  const setAddToCart = props.setAddToCart;
+  const handleAddCart = props.handleAddCart;
   const { id, img, name, seller, quantity, price, ratingsCount } =
     props.product;
   return (
@@ -16,7 +16,7 @@ const Product = (props) => {
         <p>Rating: {ratingsCount} Starts</p>
         <div className="card-actions">
           <button
-            onClick={() => setAddToCart(props.product)}
+            onClick={() => handleAddCart(props.product)}
             className="btn btn-primary rounded-3xl w-full"
           >
             Add to Cart
