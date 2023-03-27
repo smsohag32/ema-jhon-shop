@@ -9,11 +9,16 @@ const CartList = (props) => {
       <h1 className="text-xl font-semibold">Products Summary</h1>
       <hr />
       <p>Total Added : {props.addCart.length}</p>
-      {addCart.map((cart) => {
-        return (
-          <AddItems item={cart} handleRemove={handleRemove} key={cart.id} />
-        );
-      })}
+      <div className="max-h-96 overflow-y-scroll">
+        {addCart.map((cart) => {
+          return (
+            <AddItems item={cart} handleRemove={handleRemove} key={cart.id} />
+          );
+        })}
+      </div>
+      <div>
+        <p className="text-md text-right mt-6 font-bold">Sub Total: $55</p>
+      </div>
     </div>
   );
 };
