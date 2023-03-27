@@ -40,7 +40,7 @@ const Shop = () => {
           ))}
         </div>
       </div>
-      <div className="cart-container col-span-1 fixed top-20 right-0 h-screen border-1 border-blue-200 border p-6">
+      <div className="cart-container w-[25%] fixed top-20 right-0 h-screen overflow-scroll border-1 border-blue-200 border p-6">
         <CartList addCart={addCart} />
       </div>
     </div>

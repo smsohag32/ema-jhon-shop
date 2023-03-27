@@ -1,4 +1,5 @@
 import React from "react";
+import AddItems from "../AddItems/AddItems";
 
 const CartList = (props) => {
   const addCart = props.addCart;
@@ -8,7 +9,7 @@ const CartList = (props) => {
       <hr />
       <p>Total Added : {props.addCart.length}</p>
       {addCart.map((cart) => {
-        console.log(cart);
+        return <AddItems item={cart} key={cart.id} />;
       })}
     </div>
   );
