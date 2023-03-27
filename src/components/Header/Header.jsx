@@ -16,7 +16,7 @@ const Header = () => {
             Inverter
           </a>
           <a className="hover:text-slate-400" href="/login">
-            Login
+            Log out
           </a>
         </div>
       </nav>

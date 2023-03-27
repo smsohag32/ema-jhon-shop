@@ -24,6 +24,11 @@ const Shop = () => {
       setIsAdded(false);
     }, 1000);
   };
+  const handleRemove = (item) => {
+    const id = item.id;
+    const filterId = addCart.filter((ct) => ct.id != id);
+    setAddToCart(filterId);
+  };
   useEffect(() => {
     fetch("products.json")
       .then((res) => res.json())
@@ -40,8 +45,8 @@ const Shop = () => {
           ))}
         </div>
       </div>
-      <div className="cart-container w-[25%] fixed top-20 right-0 h-screen overflow-scroll border-1 border-blue-200 border p-6">
-        <CartList addCart={addCart} />
+      <div className="cart-container w-[25%] fixed top-20 right-0 h-screen overflow-y-scroll border-1 border-blue-200 border p-2">
+        <CartList handleRemove={handleRemove} addCart={addCart} />
       </div>
     </div>
   );

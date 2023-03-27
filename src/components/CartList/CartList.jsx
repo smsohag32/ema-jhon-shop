@@ -2,6 +2,7 @@ import React from "react";
 import AddItems from "../AddItems/AddItems";
 
 const CartList = (props) => {
+  const handleRemove = props.handleRemove;
   const addCart = props.addCart;
   return (
     <div>
@@ -9,7 +10,9 @@ const CartList = (props) => {
       <hr />
       <p>Total Added : {props.addCart.length}</p>
       {addCart.map((cart) => {
-        return <AddItems item={cart} key={cart.id} />;
+        return (
+          <AddItems item={cart} handleRemove={handleRemove} key={cart.id} />
+        );
       })}
     </div>
   );
